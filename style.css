@@ -7,15 +7,30 @@
 
 }
 
+  
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+  }
+
 html {
     scroll-behavior: smooth;
-    height: 999999999999px;
 }
 
+/* 
 body {
-    background-color: #EEEEEE;
-
-}
+    
+} */
 
 .navbar {
     font-size: 15px;
@@ -23,20 +38,25 @@ body {
     font-weight: 700;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.514);
+    z-index: 10;
+    width: 100%;
 }
 
 .navbar .logo {
+    margin-left: 100px;
     display: flex;
     align-items: center;
 }
 
 .navbar .logo h1 {
+    color: white;
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
     font-size: 20px;
     font-style: normal;
-    margin-left: -10px;
+    margin-left: 10px;
     margin-right: 100px;
 }
 
@@ -48,57 +68,71 @@ body {
 }
 
 .navbar ul {
-    width: 98%;
+    margin-left: 90px;
+    width: 90%;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
+    gap: 70px;
 
+}
 
+.navbar ul li a:hover {
+    transition: 0.3s ease;
+    text-shadow: 5px 5px 20px white;
 }
 
 .navbar a {
     text-decoration: none;
-    color: black;
+    color: white;
 
 
 }
 
 .navbar button {
     width: 150px;
-    margin-right: 60px;
+    margin-right: 300px;
 }
 
-.kotak {
+/* .kotak {
     display: flex;
-    width: 1000px;
-    height: 1000px;
-    background-color: #bb8fa925;
+    width: 300px;
+    height: 300px;
+    background-color: #cfe1f0;
     border-radius: 50px;
     z-index: -99999999999;
     margin-bottom: -600px;
+    margin-top: 120px;
     position: fixed;
-    margin-left: -300px;
-    transform: rotate(-70deg);
+    margin-left: -100px;
+} */
+
+.earth {
+    width: 50%;
+    margin-left: -350px;
+    margin-bottom: -800px;
+    margin-top: -300px;
+    z-index: 100;
+
 }
 
 .home {
-    margin: 50px 60px;
+
+    color: white;
+    margin: 80px 60px;
     display: flex;
     font-family: "Montserrat", sans-serif;
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    z-index: 5;
 }
 
 
 .kiri-home h1 {
     text-align: left;
-    font-size: 60px;
-    width: 70%;
-    margin-top: 20px;
+    font-size: 80px;
+    width: 80%;
 
 }
 
@@ -107,10 +141,31 @@ body {
     font-size: 12px;
 }
 
+.kiri-home button {
+    margin-top: 50px;
+    text-decoration: none;
+    border: none;
+    color: black;
+    background-color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+
+}
+
+
+
 
 .kanan-home {
     display: flex;
     flex-direction: column;
+}
+
+.kanan-home:hover {
+    cursor: url('asset/cursor.png'), auto;
+
 }
 
 
@@ -136,7 +191,7 @@ body {
     margin-bottom: -200px;
     width: 350px;
     margin-right: 120px;
-    filter: drop-shadow(20px 0px 20px #6b5361);
+    filter: drop-shadow(40px 0px 40px #e0eaf3);
     z-index: -1;
     transition: 0.3s ease;
     display: flex;
@@ -144,9 +199,12 @@ body {
 }
 
 .orang:hover {
-    filter: drop-shadow(20px 0px 20px #560764);
+    filter: drop-shadow(20px 0px 20px #c5dff5);
 
 }
+
+
+/* home end */
 
 
 
@@ -155,32 +213,40 @@ body {
     justify-content: center;
     display: flex;
     background-color: #ffff;
-    margin: 0 60px;
-    z-index: 999999999999999999999;
-    border-radius: 10px;
-
-
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 15px 15px 30px 0px rgba(128, 128, 128, 0.233);
 }
 
 .about h1 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-family: "Monsterrat", sans-serif;
+    font-weight: 900;
+    font-size: 80px;
     display: flex;
+
     align-items: center;
+    margin-left: -400px;
 }
 
 .about p {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     display: flex;
-    align-items: center;
+    align-items: right;
     font-size: 20;
+    margin-top: -150px;
+    text-align: right;
 }
 
-.about img {
+
+
+.moon {
+    z-index: 0;
     width: 700px;
+    height: 350px;
     position: relative;
     transition: 0.3s;
+    margin-left: -50px;
+
 }
 
 .about img:hover {
@@ -188,6 +254,111 @@ body {
 }
 
 
+
+
 .isi-about {
     flex-direction: row;
+
+}
+
+
+.isi-about p {
+    font-family: "Monsterrat", sans-serif;
+    margin-right: 90px;
+    font-size: 20px;
+}
+
+.sekolah {
+    background-color: #ffff;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sekolah h1 {
+    padding-top: 100px;
+    font-size: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sd {
+    margin-top: 100px;
+    display: flex;
+    text-align: left;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.sd img {
+    width: 400px;
+    border-radius: 30px;
+    padding-top: 15px;
+    box-shadow: 15px 15px 30px 0px rgba(128, 128, 128, 0.233);
+    background: linear-gradient(to bottom, #e8f0ff, #F4F9F9);
+
+}
+
+.isi-sd {
+    width: 650px;
+}
+
+.isi-sd h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.isi-sd p {
+    font-size: 13px;
+    margin-left: 50px;
+}
+
+.smp {
+    margin-top: 100px;
+    display: flex;
+    text-align: right;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.isi-smp {
+    width: 650px;
+}
+
+.isi-smp h2 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.isi-smp p {
+    font-size: 13px;
+    margin-right: 50px;
+}
+
+.eskul {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.isi-eskul h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.isi-eskul h5 {
+    font-weight: 400;
+}
+
+.project {
+    background: linear-gradient(to bottom, #ffffff, #000407);
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
 }
